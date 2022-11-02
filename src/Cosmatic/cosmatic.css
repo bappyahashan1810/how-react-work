@@ -1,0 +1,14 @@
+.product {
+    border: 2px solid gray;
+    border-radius: 20px;
+    background-color: lightgrey;
+    color: coral;
+    padding: 10px;
+    margin: 20px;
+}
+
+.button {
+    background-color: yellow;
+    padding: 5px;
+    margin: 5px;
+}
