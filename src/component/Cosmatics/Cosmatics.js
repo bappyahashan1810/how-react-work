@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Cosmatic from "../../Cosmatic/Cosmatic";
 
 
 function Cosmatics() {
-    const cosmatics = [
-        { id: 1, name: 'Alta', price: 100 },
-        { id: 2, name: 'balis', price: 200 },
-        { id: 3, name: 'Calis', price: 300 },
-        { id: 4, name: 'Dalis', price: 400 },
-        { id: 5, name: 'Ealis', price: 500 }
-    ]
+    const [cosmatics, setCosmatics] = useState([]);
+    useEffect(() => {
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => setCosmatics(data))
+    }, [])
+
 
     return (
 
@@ -17,7 +17,7 @@ function Cosmatics() {
             <h1>Here is Cosmatics page</h1>
             {
                 cosmatics.map(cosmatic => <Cosmatic
-                    key={cosmatic.id}
+                    key={cosmatic._id}
                     cosmatic={cosmatic}>
 
                 </Cosmatic>)
