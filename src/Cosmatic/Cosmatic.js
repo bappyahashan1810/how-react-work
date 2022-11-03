@@ -1,10 +1,11 @@
 import React from 'react'
+import { addToDb } from '../utilities/fakedb';
 import './cosmatic.css'
 
 const Cosmatic = (props) => {
     const { name, price, _id } = props.cosmatic;
     const addToCart = (name) => {
-        localStorage.setItem(name, 1);
+        addToDb(name);
 
     }
     return (
